@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezept-Sammlung App</title>
+  <link rel="stylesheet" href="frontStyles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="auth-section" class="auth-container">
+      <h1>Willkommen bei Milano</h1>
+      <button onclick="showRegisterForm()">Registrieren</button>
+      <button onclick="showLoginForm()">Anmelden</button>
+      
+      <div id="register-form" class="auth-form hidden">
+        <h2>Registrierung</h2>
+        <input type="text" id="register-username" placeholder="Benutzername" required>
+        <input type="text" id="register-email" placeholder="email" required>
+        <input type="password" id="register-password" placeholder="Passwort" required>
+        <input type="password" id="register-password-confirm" placeholder="Passwort bestätigen" required>
+        <button onclick="registerUser()">Registrieren</button>
+      </div>
+
+      <div id="login-form" class="auth-form hidden">
+        <h2>Anmeldung</h2>
+        <input type="text" id="login-username" placeholder="Benutzername" required>
+        <input type="password" id="login-password" placeholder="Passwort" required>
+        <button onclick="loginUser()">Anmelden</button>
+      </div>
+    </div>
+
+    <div id="dashboard-section" class="hidden">
+      <h1>Rezept Dashboard</h1>
+      <button onclick="showCreateForm()">Neues Rezept erstellen</button>
+      <button onclick="searchRecipes()">Rezepte suchen</button>
+      <button onclick="loadAllRecipes()">Alle Rezepte</button>
+      <button onclick="logoutUser()">Abmelden</button>
+      <div id="create-recipe-form" class="hidden">
+
+
+        <h2>Rezept erstellen</h2>
+        <input type="text" id="rezepte-rezeptname" placeholder="Rezeptname" required>
+        <textarea id="rezepte-beschreibung" placeholder="Beschreibung"></textarea>
+        <textarea id="rezepte-zutaten" placeholder="Zutaten"></textarea>
+        <textarea id="rezepte-zubereitung" placeholder="Zubereitung"></textarea>
+        <input type="text" id="rezepte-kategorie" placeholder="Kategorie">
+        <input type="text" id="rezepte-land" placeholder="Land">
+        <button onclick="createRecipe()">Erstellen</button>
+      </div>
+
+      <div id="search-recipe-section" class="hidden">
+        <h2>Suche nach Rezepten</h2>
+        <input type="text" id="search-land" placeholder="Nach Land suchen">
+        <input type="text" id="search-kategorie" placeholder="Nach Kategorie suchen">
+        <button onclick="searchByCriteria()">Suchen</button>
+        <button onclick="logoutUser()">Abmelden</button>
+        <div id="search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  
+</body>
+</html>
